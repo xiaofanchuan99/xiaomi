@@ -1,0 +1,185 @@
+// 重置样式 
+figure,
+figcaption,
+body,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img,
+table,
+fieldset,
+legend,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img,
+fieldset {
+    border: 0;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+body {
+    font-family: "微软雅黑";
+}
+
+input,
+a {
+    outline: none;
+}
+
+i {
+    font-style: normal;
+}
+
+// ---------------
+.submenu,
+.sub-list,
+.banner,
+.main,
+.bottom,
+.footer,
+.nav {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+// header---------------
+.header {
+    height: 120px;
+}
+
+//header-pic-------------
+.header-pic {
+    background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a2a9e6db5e3c5374301827435d8595c6.jpg?w=5120&h=240);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: auto 120px;
+    height: 120px;
+}
+
+//nav-------------
+.nav-wrap {
+    background-color: chocolate;
+}
+
+.nav {
+    height: 40px;
+    background-color: #333;
+    overflow: hidden;
+    border: 1px solid;
+    font-size: 12px;
+}
+
+.nav li {
+    float: left;
+    margin-left: 4.29px;
+}
+
+.nav ul li a {
+    color: #b0b0b0;
+    line-height: 40px;
+    text-align: center;
+}
+
+// submenu
+.submenu {
+    height: 100px;
+    background-color: cornflowerblue;
+}
+
+// banner
+.banner {
+    height: 460px;
+    background-color: darkcyan;
+}
+
+// sub-list
+.sub-list {
+    height: 170px;
+    background-color: red;
+    margin-top: 14px;
+    // margin-left: ;
+}
+
+.sub-list1 {
+    padding: 3px;
+    width: 236px;
+    height: 170px;
+    background-color: saddlebrown;
+    box-sizing: border-box;
+    float: left;
+}
+
+.sub-list1 li {
+    float: left;
+    width: 70px;
+    height: 82px;
+    line-height: 82px;
+    text-align: center;
+}
+
+$sub-list-img-width:316px;
+$sub-list-img-height:170px;
+$float-left:float-left;
+.sub-list-img1 {
+    width: $sub-list-img-width;
+    height: $sub-list-img-height;
+    background-color: salmon;
+    float: left;
+    margin-left: 14px;
+}
+
+.sub-list-img2 {
+    width: $sub-list-img-width;
+    height: $sub-list-img-height;
+    background-color: gold;
+    float: left;
+    margin-left: 14px;
+}
+
+.sub-list-img3 {
+    width: $sub-list-img-width;
+    height: $sub-list-img-height;
+    background-color: fuchsia;
+    float: left;
+    margin-left: 14px;
+}
