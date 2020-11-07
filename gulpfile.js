@@ -11,6 +11,16 @@ const connect = require("gulp-connect");
 //gulp-sass 浏览器本身不支持sass的语法 把sass转成css
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps")
+    //拷贝iconfont
+gulp.task("font", done => {
+    gulp.src("iconfont/*")
+        .pipe(gulp.dest("dist/iconfont"))
+        .pipe(connect.reload());
+    done()
+})
+
+
+
 
 //拷贝img
 gulp.task("copyimg", done => {
@@ -76,9 +86,10 @@ gulp.task("watch", done => {
     gulp.watch(["*.js", "!gulpfile.js"], gulp.series("copyjs"));
     gulp.watch("*.img", gulp.series("copyimg"));
     gulp.watch("sass/*.scss", gulp.series("sass"));
+    gulp.watch("iconfont/*"), gulp.series("font");
 
     done();
 })
 
-gulp.task("build", gulp.parallel("copyimg", "copyjs", "copyindexhtml", "copyhtml"));
+gulp.task("build", gulp.parallel("copyimg", "copyjs", "copyindexhtml", "copyhtml", "font"));
 gulp.task("default", gulp.series("server", "watch", "build"));
