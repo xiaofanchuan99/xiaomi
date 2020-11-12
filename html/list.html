@@ -5,11 +5,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/list.css">
+
 </head>
 
 <body>
+    <div class="header-wrap">
+        <div class="dl-header">
+            <a href="../home.html">
+                <div class="header-logo">
 
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="dl-banner">
+
+
+
+        <div class="dl">
+
+
+
+
+            <div class="nav-tab">
+                <a href="#" id="zhdl">账号登陆</a>
+                <!-- <span class="line"></span> -->
+                <a href="#" id="smdl">扫码登录</a>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="midl">
+
+                <div class="box">
+                    <label>
+                    <input type="text" placeholder="邮箱/手机号码/小米ID" id="user">
+                </label>
+                    <label>
+                    <input type="password" placeholder="密码" id="psw">
+                </label>
+                    <input type="button" value="登录" class="btn">
+                    <a href="../html/zhuce.html" class="dlgon">手机短信登录/注册</a>
+                    <div class="zcdl">
+                        <a href="../html/zhuce.html">立即注册</a><span>|</span><a href="">忘记密码？</a>
+                    </div>
+                    <div class="logo">
+                        <a href="">
+                            <i></i>
+                        </a>
+                        <a href="">
+                            <i></i>
+                        </a>
+                        <a href="">
+                            <i></i>
+                        </a>
+                        <a href="">
+                            <i></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+                <div class="saoma">
+                    <p class="cont">
+                        请使用小米手机米家等小米旗下APP扫码登录
+                    </p>
+                    <div class="erweima"></div>
+                    <p>使用 <a href="">小米商城APP </a>扫一扫</p>
+                    <p>小米手机可打开[设置] > [小米账号] 扫码登录</p>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+    <div class="dl-footer">
+        <p>
+
+            <a href="">简体</a> <span>|</span>|
+
+            <a href="">繁体</a> <span>|</span>
+
+            <a href="">English</a><span>|</span>
+
+            <a href="">常见问题</a> <span>|</span>
+
+            <a href="">隐私政策</a> <span>|</span>
+
+
+
+        </p>
+        <p class="p2">
+            小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号
+        </p>
+
+
+    </div>
 </body>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+    //登录
+    $('.btn').click(function() {
+        let user = $("#user").val();
+        let psw = $("#psw").val();
+        let url = 'http://jx.xuzhixiang.top/ap/api/login.php'
+        $.ajax({
+            url: url,
+            type: 'get',
+            data: {
+                username: user,
+                password: psw
+            },
+            success(res) {
+                let uid = res.data.id
+                console.log(uid);
+                if (res.code == 0) {
+                    alert(res.msg)
+
+
+                } else {
+                    alert(res.msg)
+                    localStorage.setItem("uid", res.data.id);
+                    localStorage.setItem("username", res.data.username);
+                    localStorage.setItem("utoken", res.data.token)
+                    location.href = '../home.html'
+                }
+
+            },
+            error() {
+
+            }
+
+        })
+
+    })
+
+    $(function() {
+        $(".nav-tab a").click(function() {
+            $(this).css({
+                'color': 'red'
+            })
+            $(this).siblings().css('color', '')
+            var index = $(this).index();
+            $('.midl>div').eq(index).show();
+            $('.midl>div').eq(index).siblings().hide();
+
+        })
+    })
+</script>
 
 </html>

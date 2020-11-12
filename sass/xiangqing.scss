@@ -1,0 +1,167 @@
+// 重置样式 
+figure,
+figcaption,
+body,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img,
+table,
+fieldset,
+legend,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img,
+fieldset {
+    border: 0;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+body {
+    font-family: "微软雅黑";
+    background-color: #f5f5f5;
+}
+
+input,
+a {
+    outline: none;
+}
+
+i {
+    font-style: normal;
+}
+
+.list {
+    min-height: 900px;
+    width: 922px;
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list li {
+    width: 456px;
+    height: 368px;
+    background-color: cadetblue;
+    // float: left;
+    margin-top: 10px;
+    transition: all .5s;
+}
+
+#autoplay {
+    height: 620px;
+    // width: 1220px;
+    // background-color: burlywood;
+}
+
+.swiper-container3 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    height: 620px;
+}
+
+#list-title {
+    height: 52px;
+    background-color: #f5f5f5;
+    width: 922px;
+    margin: 0 auto;
+    line-height: 52px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.list li img {
+    width: 457px;
+    height: 271px;
+}
+
+.list li span {
+    display: block;
+}
+
+.list {
+    div {
+        width: 457px;
+        height: 105px;
+        background-color: #fff;
+        padding: 28px 38px;
+        box-sizing: border-box;
+    }
+}
+
+.list li span:nth-of-type(1) {
+    height: 40px;
+    width: 280px;
+    color: rgba(51, 51, 51, .9);
+    font-size: 24px;
+    // background-color: chocolate;
+}
+
+.list li span:nth-of-type(2) {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 3px 0 0;
+    color: rgba(51, 51, 51, .7);
+}
+
+.list li span:nth-of-type(3) {
+    text-align: right;
+    position: relative;
+    bottom: 35px;
+    font-weight: 400;
+    font-size: 30px;
+    color: #ff6700;
+    i {
+        color: #ff6700;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+
+.list li:hover {
+    transform: translateY(-10px);
+}

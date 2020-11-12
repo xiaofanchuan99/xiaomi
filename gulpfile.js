@@ -47,12 +47,24 @@ gulp.task("copyhtml", done => {
     })
     //拷贝js/
 gulp.task("copyjs", done => {
-    gulp.src(["*.js", "!gulpfile.js"])
-        .pipe(gulp.dest("dist/js"))
-        .pipe(connect.reload());
+        gulp.src(["*.js", "!gulpfile.js"])
+            .pipe(gulp.dest("dist/js"))
+            .pipe(connect.reload());
 
-    done()
-})
+        done()
+    })
+    // gulp.task("sass", done => {
+
+//     gulp.src("sass/*.scss")
+//         .pipe(sourcemaps.init())
+//         .pipe(sass({
+//             outputStyle: "compressed"
+//         }))
+
+//     .pipe(gulp.dest("dist/css"))
+//         .pipe(connect.reload());
+//     done()
+// })
 gulp.task("sass", done => {
 
     gulp.src("sass/*.scss")
@@ -60,11 +72,12 @@ gulp.task("sass", done => {
         .pipe(sass({
             outputStyle: "compressed"
         }))
-
-    .pipe(gulp.dest("dist/css"))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest("dist/css"))
         .pipe(connect.reload());
-    done()
-})
+
+    done();
+});
 
 
 
@@ -91,5 +104,5 @@ gulp.task("watch", done => {
     done();
 })
 
-gulp.task("build", gulp.parallel("copyimg", "copyjs", "copyindexhtml", "copyhtml", "font"));
+gulp.task("build", gulp.parallel("copyimg", "copyjs", "copyindexhtml", "copyhtml", "font", "sass"));
 gulp.task("default", gulp.series("server", "watch", "build"));

@@ -1,0 +1,269 @@
+// 重置样式 
+figure,
+figcaption,
+body,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img,
+table,
+fieldset,
+legend,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img,
+fieldset {
+    border: 0;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+body {
+    font-family: "微软雅黑";
+    background-color: #f5f5f5;
+}
+
+input,
+a {
+    outline: none;
+}
+
+i {
+    font-style: normal;
+}
+
+.box1 {
+    height: 63px;
+    background-color: #fff;
+    border-top: 1px solid #f5f5f5;
+    box-shadow: 0px 16px 10px 1px gray;
+}
+
+#shop-dl {
+    height: 50px;
+    width: 1226px;
+    margin: 0 auto;
+    // background-color: aquamarine;
+    text-align: center;
+    font-size: 14px;
+    line-height: 50px;
+    margin-top: 15px;
+}
+
+#sp-price1 {
+    margin-left: 10px;
+}
+
+#shop-proudus {
+    width: 1226px;
+    height: 827px;
+    // background-color: hotpink;
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    .shop-left {
+        height: 783px;
+        width: 606px;
+        // background-color: khaki;
+        #shop-play {
+            width: 560px;
+            height: 560px;
+            // background-color: lightgreen;
+            img {
+                width: 560px;
+            }
+        }
+    }
+    .shop-right {
+        width: 600px;
+        height: 783px;
+        // background-color: lightblue;
+        p:nth-of-type(1) {
+            font-size: 24px;
+            font-weight: 400;
+            color: #212121;
+            // background-color: blueviolet;
+            // line-height: 36px;
+            height: 36px;
+            display: flex;
+            img {
+                width: 50px;
+                height: 24px;
+                // background-color: cadetblue;
+                margin-top: 5px;
+            }
+        }
+        p:nth-of-type(2) {
+            color: #b0b0b0;
+            padding-top: 8px;
+            line-height: 1.5;
+            font-size: 14px;
+            span {
+                color: rgb(255, 74, 0);
+            }
+        }
+        p:nth-of-type(3) {
+            color: #ff6700;
+            font-size: 14px;
+            height: 21px;
+        }
+        #xian {
+            border: 1px solid #e0e0e0;
+            margin-top: 15px;
+        }
+        #ms {
+            height: 52px;
+            background-color: #ff6700;
+            margin: 15px 0;
+            line-height: 21px;
+            padding-left: 14px;
+            p {
+                font-size: 14px;
+                color: #fff;
+                height: 16px;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.swiper-container4 {
+    width: 560px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+// .cl {
+//     height: 100px;
+//     background-color: aqua;
+// }
+#shop-d {
+    height: 104px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    margin: 15px 0;
+    .data {
+        span {
+            font-size: 14px;
+            margin-left: 14px;
+        }
+        i {
+            font-size: 14px;
+            margin-left: 14px;
+            color: #ff6700;
+        }
+        b {
+            color: #e0e0e0;
+        }
+    }
+}
+
+.colo {
+    height: 27px;
+    // background-color: forestgreen;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.xuanze {
+    width: 292px;
+    height: 42px;
+    border: 1px solid #ff6700;
+    line-height: 42px;
+    text-align: center;
+    color: #ff6700;
+}
+
+.data-v {
+    width: 600px;
+    height: 146px;
+    background-color: #f9f9fa;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    p {
+        font-size: 24px;
+        padding-top: 20px;
+        color: #ff6700 !important;
+    }
+}
+
+#shop-btn {
+    width: 300px;
+    height: 54px;
+    background-color: #ff6700;
+    border: 0;
+    color: #fff;
+    float: left;
+}
+
+#shop-shoucang {
+    display: inline-block;
+    width: 140px;
+    height: 52px;
+    line-height: 52px;
+    border: 1px solid #b0b0b0;
+    text-align: center;
+    cursor: pointer;
+    transition: all .4s;
+    font-size: 16px;
+    float: left;
+    margin-left: 10px;
+    color: #fff;
+    background: #b0b0b0;
+}
+
+.shop-proudus-wrap {
+    background-color: #fff;
+}
+
+#shop-pic {
+    width: 1226px;
+    margin: 0 auto;
+    min-height: 800px;
+    background-color: aqua;
+}

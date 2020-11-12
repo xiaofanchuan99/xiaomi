@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/zhuce.css">
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="zhuce">
+
+            <img src="../images/milogo.jpg" alt="" class="zhuce-logo">
+            <p class="zc-title">注册小米账号</p>
+            <form action="">
+                <p>国家/地区</p>
+                <input type="text" id="user">
+
+                <p>成功注册账号后，国家/地区将不能被修改</p>
+                <p>手机号码</p>
+                <input type="text" id="psw">
+                <input type="button" value="立即注册" class="btn">
+            </form>
+
+        </div>
+
+        <p class="yd">
+            已阅读并同意：小米 <a href="https://static.account.xiaomi.com/html/agreement/user/zh_CN.html">用户协议</a> 和 <a href="https://static.account.xiaomi.com/html/agreement/user/zh_CN.html">隐私政策</a>
+        </p>
+    </div>
+    <div class="bottom">
+        <a href="">简体</a> <span>|</span> <a href="">繁体</a> <span>|</span> <a href=""> English</a> <span>|</span> <a href="">常见问题</a>
+    </div>
+    <div class="footer">
+        小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号
+    </div>
+</body>
+
+
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+    // $('.btn').click(function() {
+    //     let user = $("#user").val();
+    //     let psw = $("#psw").val();
+    //     let url = 'http://jx.xuzhixiang.top/ap/api/reg.php'
+    //     $.ajax({
+    //         url: url,
+    //         type: 'post',
+    //         data: {
+    //             username: user,
+    //             password: psw
+    //         },
+    //         success(res) {
+    //             // console.log(res);
+    //             if (res.code == 0) {
+    //                 alert(res.msg)
+    //             } else {
+    //                 alert(res.msg)
+    //             }
+
+    //         },
+    //         error() {
+
+    //         }
+
+
+    //     })
+    // })
+
+    // console.log($("#user"));
+    $('.btn').click(function() {
+        // console.log($("#user").val());
+        let user = $("#user").val();
+        let psw = $("#psw").val();
+        $.get('http://jx.xuzhixiang.top/ap/api/reg.php', {
+            "username": user,
+            "password": psw
+        }, data => {
+            if (data.code == 0) {
+                alert(data.msg)
+            } else {
+                alert(data.msg)
+            }
+        })
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 
+    // var oDq = document.querySelector('.dq');
+    // var xX = document.querySelector('.xuanxiang');
+    // var con = document.querySelector('.content')
+    //     // console.log(oDq);
+    // oDq.onclick = function() {
+    //         xX.style.display = 'block'
+
+    //     }
+    // con.onclick = function() {
+    //     xX.style.display = ''
+
+    // }
+</script>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/gouwuche.css">
+
+</head>
+
+<body>
+    <ul class="ul">
+        <!-- <li></li>
+        <li></li>
+        <li></li> -->
+    </ul>
+</body>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+    // 加入购物车
+    let uid = localStorage.getItem('uid');
+    console.log(uid);
+    $.ajax({
+        url: 'http://jx.xuzhixiang.top/ap/api/cart-list.php',
+        type: 'get',
+        data: {
+            id: uid
+        },
+        success(res) {
+            console.log(res.data);
+            cart = res.data
+            let html = '';
+            cart.forEach(v => {
+                html +=
+                    `
+                <li >
+               
+               单选<input type="checkBox" class='dan' pid=${v.pid}>
+                 商品名称  <h1>${v.pname}</h1>
+                 商品价格  <p>${v.pprice}</p>
+                 商品描述  <p>${v.pdesc}</p>
+                 商品图片 <img src="${v.pimg}" alt="">
+                </a> 
+                <button class='add' pid=${v.pid}>+</button>
+                <button>${v.pnum}</button>
+                <button class='sub' pid=${v.pid}>-</button>
+                <button class='del' pid=${v.pid}>删除</button> 
+
+              
+                </li>  
+
+   
+                
+                `
+
+            })
+            $('.ul').html(html)
+
+            delcart()
+
+        },
+        error() {
+
+        }
+
+
+    })
+
+    //删
+    function delcart() {
+
+        $('.del').click(function(e) {
+            $(this).parent().remove()
+                // console.log(e.target.pid)
+            let pid = $(this).attr('pid')
+            console.log(pid)
+
+            let delAPI = 'http://jx.xuzhixiang.top/ap/api/cart-delete.php'
+            $.ajax({
+                url: delAPI,
+                type: 'get',
+                data: {
+                    uid: uid,
+                    pid: pid
+                },
+                success(res) {
+                    console.log(res.msg)
+                },
+                error() {
+
+                }
+            })
+        })
+    }
+    //全选
+</script>
+
+</html>
